@@ -1,1 +1,16 @@
-console.log('Log from /client/main.js');
+import React from 'react';
+import ReactDom from 'react-dom';
+import { Meteor } from 'meteor/meteor';
+
+Meteor.startup(function() {
+    let title = 'Score Keep';
+    let name = 'Moshe';
+    let jsx = (
+        <div>
+            <h1>{ title }</h1>
+            <p>Hello {name}!</p>
+            <p>This is my second p.</p>
+        </div>
+    );
+    ReactDom.render(jsx, document.getElementById('app'));
+});
